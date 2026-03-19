@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidores | Drunk-Gaming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="logged-out">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">DG</div>
+                <span>DRUNK-GAMING</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">🏠 Inicio</a></li>
+                <li><a href="#servidores">🎮 Servidores</a></li>
+                <li><a href="#ventas">🛒 Ventas</a></li>
+                <li><a href="#descargas">📥 Descargas</a></li>
+                <li><a href="#staff">👥 Staff</a></li>
+                <li><a href="#comunidad">💬 Comunidad</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <!-- Logged Out -->
+            <div class="auth-buttons" id="authButtons">
+                <a href="login.html" class="btn btn-login">Inicia sesión</a>
+                <a href="register.html" class="btn btn-register">Crear una cuenta</a>
+            </div>
+            
+            <!-- Logged In -->
+            <div class="user-menu" id="userMenu " style="display: flex;">
+                <!-- Admin Panel Tab -->
+                <div class="admin-panel">
+                    <button class="icon-btn" onclick="toggleAdminPanel()" title="Panel de Admin">
+                        ⚙️
+                    </button>
+                    <div class="admin-dropdown" id="adminDropdown">
+                        <h3>⚙️ Configuración de Admin</h3>
+                        <div class="form-group">
+                            <label>Tag CS</label>
+                            <input type="text" id="csTag" placeholder="Ingresa el tag que usarás en los servidores">
+                            <div class="form-help">Ingresa el tag que utilizarás en los servidores.</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input type="password" id="adminPassword" placeholder="••••••••">
+                            <div class="form-help">Ingresa la contraseña que utilizarás para proteger tu Admin CS.</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Grabación de demos automáticas</label>
+                            <select id="demoRecording">
+                                <option value="no">No grabar demos</option>
+                                <option value="auto">Grabación automática</option>
+                                <option value="manual">Grabación manual</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-register btn-full" onclick="saveAdminSettings()">
+                            💾 Guardar Configuración
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <button class="icon-btn" onclick="showNotifications()" title="Notificaciones">
+                    🔔
+                    <span class="badge" id="notifBadge">3</span>
+                </button>
+
+                <!-- Messages -->
+                <button class="icon-btn" onclick="showMessages()" title="Mensajes">
+                    ✉️
+                    <span class="badge" id="msgBadge">1</span>
+                </button>
+
+                <!-- User Profile -->
+                <div class="dropdown">
+                    <div class="user-profile" onclick="toggleUserMenu()">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <span id="userName">Usuario</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="dropdown-menu" id="userDropdown">
+                        <div class="dropdown-header">👤 Mi Cuenta</div>
+                        <div class="dropdown-item" onclick="showProfile()">👤 Perfil</div>
+                        <div class="dropdown-item" onclick="showSettings()">⚙️ Configuración</div>
+                        <div class="dropdown-item" onclick="window.location.href='admin-panel.html'">🛡️ Panel de Admin</div>
+                        <div class="dropdown-item" onclick="logout()" style="color: #ef4444;">🚪 Cerrar sesión</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h1>Servidores | Drunk-Gaming</h1>
+            <p>
+                Contamos con <strong>20 servidores</strong> en total en la comunidad. Busca tu servidor de preferencia, 
+                agrégalo a favoritos y a jugar. Si no sabes cómo agregarlo a favoritos, 
+                <a href="#">visita este artículo</a> que te ayudará a hacerlo.
+            </p>
+            <div class="action-buttons">
+                <button class="btn btn-register">📜 Reglamento</button>
+                <button class="btn btn-login">🔗 Compartir</button>
+            </div>
+        </div>
+
+        <!-- Servers Grid -->
+        <div class="servers-grid" id="serversGrid">
+            <!-- Servers will be loaded by JavaScript -->
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

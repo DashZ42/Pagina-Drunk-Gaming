@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | Drunk-Gaming</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-box">
+            <a href="index.html" class="logo-login">
+                <div class="logo-icon">DG</div>
+                <span>DRUNK-GAMING</span>
+            </a>
+            
+            <h2>Crear Cuenta</h2>
+            
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Nombre de Usuario</label>
+                    <input type="text" id="regUser" required placeholder="Elige un usuario">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="regEmail" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="regPass" required placeholder="Mínimo 6 caracteres">
+                </div>
+                
+                <div class="form-group">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" id="regPassConfirm" required placeholder="Repite tu contraseña">
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span>Acepto los <a href="#">términos y condiciones</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-register btn-full">Crear Cuenta</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/auth.js"></script>
+</body>
+</html>

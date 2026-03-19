@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Limpiar Sesión</title>
+</head>
+<body>
+    <h2>Limpiando sesión...</h2>
+    <script>
+        // Limpiar localStorage
+        localStorage.clear();
+        
+        // Limpiar cookies
+        document.cookie.split(";").forEach(function(c) { 
+            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+        });
+        
+        // Redirigir al index
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+    </script>
+</body>
+</html>
