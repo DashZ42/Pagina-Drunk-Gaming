@@ -1,0 +1,88 @@
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1024px) {
+    .servers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .server-card {
+        flex-direction: column;
+    }
+    
+    .server-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-left {
+        gap: 1rem;
+    }
+    
+    .admin-dropdown {
+        width: 300px;
+        right: 0;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .servers-grid {
+        gap: 1.5rem;
+    }
+    
+    .server-card {
+        padding: 1rem;
+    }
+    
+    .admin-content {
+        flex-direction: column;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .admin-main {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span {
+        display: none;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .server-actions {
+        flex-direction: column;
+    }
+    
+    .login-box {
+        padding: 1.5rem;
+    }
+}
